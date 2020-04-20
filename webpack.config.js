@@ -1,13 +1,13 @@
 var path = require("path");
 
 var Html = require('html-webpack-plugin');
- 
+
 module.exports = {
   entry: [
     "whatwg-fetch", // polyfill dla fetch
     "./src/js/app.js", // główny plik aplikacji
   ],
-  output: { 
+  output: {
     filename: "js/out.js", // ścieżka pliku wyjscia
     path: path.resolve(__dirname, "build") //zapisuj wszystko w ./build
   },
@@ -27,7 +27,7 @@ module.exports = {
           //   presets: [
           //     'env', // transpiluj szystko zgodnie z ustawieniami
           //            // w pliku .browserlistrc definiujemy wsparcie urządzeń
-          //            // https://github.com/browserslist/browserslist              
+          //            // https://github.com/browserslist/browserslist
           //     'stage-2', // wspracie dla inicjalizatora właściwości
           //     'react', // jsx -> js
           //   ]
@@ -55,7 +55,7 @@ module.exports = {
 
       // obrazy
       {
-        test: /\.(jpg|jpeg|gif|png)$/,
+        test: /\.(jpg|jpeg|gif|png|svg)$/,
         use: {
           loader: 'file-loader',
           options: {
