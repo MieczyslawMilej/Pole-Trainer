@@ -1,0 +1,105 @@
+.hero_section {
+
+  h1 {
+    width: 100%;
+    font-size: 8.391em;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.33em;
+    color: $bg-color;
+    -webkit-text-stroke: 1px rgba(237, 237, 237, 0.64);
+    text-shadow: -9px -9px 16px #ffffff, 9px 5px 16px rgba(0, 0, 0, 0.08);
+    padding: 65px 0;
+  }
+
+  p {
+    text-align: left;
+    font-size: 1.8em;
+    text-transform: uppercase;
+    letter-spacing: 0.33em;
+    line-height: 1.8em;
+    padding-bottom: 35px;
+  }
+
+  .btn {
+    // font-size: 1.2em;
+    padding: 10px 20px;
+    letter-spacing: 0.165em;
+    color: $cta-color;
+    border: 1px solid #e71826;
+    border-radius: 8px;
+    text-transform: uppercase;
+    @include boxShadowInset;
+    transition: transform 0.4s ease;
+    display: inline-block;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .links {
+    position: absolute;
+    bottom: 40px;
+    right: 50%;
+    transform: translateX(65%);
+    z-index: 3;
+
+    & :last-child {
+      padding-left: 40px;
+    }
+
+    .social {
+      font-size: 1em;
+      color: $main-txt-color;
+      font-weight: 100;
+      transition: transform 0.2s ease;
+      display: inline-block;
+
+      &:hover {
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  .rectangle {
+    width: 300px;
+    height: 300px;
+    background-color: $box-color;
+    @include boxShadowInset;
+    position: absolute;
+    border-radius: 8px;
+    transform: rotate(47deg);
+
+    &.first_rectang {
+      top: -157px;
+    left: -105px;
+    }
+
+    &.second_rectang {
+      width: 900px;
+      height: 500px;
+      bottom: -25%;
+      right: -30%;
+    }
+  }
+
+  .circle {
+    width: 900px;
+    height: 900px;
+    border-radius: 50%;
+    background-color: $cta-color;
+    @include boxShadowInset;
+    position: absolute;
+
+    &.first_circle {
+      top: -75%;
+    right: -30%;
+    }
+
+    &.second_circle {
+      bottom: -65%;
+      left: -40%;
+    }
+  }
+}

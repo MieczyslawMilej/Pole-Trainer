@@ -8,7 +8,7 @@ export default function LandingPage() {
     <>
       <header>
         <Nav />
-        <Hero />
+        <Hero/>
         <img className="hero_img" src={poletrainer_hero_image} alt="kobieta" />
       </header>
     </>

@@ -6,9 +6,9 @@ export default function Nav() {
 
   return (
     <nav>
-      <Link to="/pole_studios">Studia w Krakowie</Link>
+      <Link className="nav_link" to="/pole_studios">Studia w Krakowie</Link>
       <Link className="logo" to="/"><img src={logo_pole_trainer} alt="logo" /></Link>
-      <Link to="/trainers">Dla trenerów</Link>
+      <Link className="nav_link" to="/trainers">Dla trenerów</Link>
     </nav>
   );
 }

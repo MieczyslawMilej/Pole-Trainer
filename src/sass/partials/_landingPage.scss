@@ -1,0 +1,14 @@
+header {
+  max-width: $main-width;
+  margin: 0 auto;
+  position: relative;
+  height: 100vh;
+  max-height: 1080px;
+}
+
+img {
+  position: absolute;
+  top: 0;
+  right:-15px;
+  height: 100%;
+}

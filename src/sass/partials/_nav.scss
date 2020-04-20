@@ -1,0 +1,39 @@
+nav {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 40px;
+
+  a {
+    color: $main-txt-color;
+    font-weight: 100;
+    letter-spacing: 0.19em;
+    transition: all 0.3s ease;
+    font-size: 1.5em;
+  }
+
+  .nav_link:hover {
+    color: black;
+    transform: translateY(-2px);
+  }
+
+  .logo {
+    display: inline-block;
+    width: 130px;
+    height: 130px;
+    background-color: $bg-color;
+    border-radius: 50%;
+    position: relative;
+    @include boxShadowInset;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60%;
+    }
+  }
+}

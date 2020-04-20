@@ -1,2 +1,17 @@
+$main-width: 1600px;
 
-$main-width: 1024px;
+$border-radius: 20px;
+
+@mixin displayFlexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin boxShadowInset {
+  box-shadow: -9px -6px 16px rgba(255, 255, 255, 0.6), 9px 5px 16px rgba(0, 0, 0, 0.08), inset 2px 2px 2px rgba(0, 0, 0, 0.03), inset -2px -2px 2px rgba(255, 255, 255, 0.4);
+}
+
+@mixin boxShadow {
+  box-shadow: -9px -9px 16px #FFFFFF, 9px 5px 16px rgba(0, 0, 0, 0.08);
+}
