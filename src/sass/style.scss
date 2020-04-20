@@ -1,1 +1,8 @@
-// @import './test/bg';
+@import "settings/reset";
+@import "settings/colors";
+@import "settings/fonts";
+@import "settings/all";
+
+@import "partials/landingPage";
+@import "partials/nav";
+@import "partials/base";

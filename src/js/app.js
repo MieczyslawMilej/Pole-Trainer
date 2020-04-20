@@ -37,12 +37,3 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("app")
   );
 });
-
-
-// <Route path="/blog">
-//   <Blog />
-// </Route>
-
-// <Route path="/pricing">
-//   <Pricing />
-// </Route>
