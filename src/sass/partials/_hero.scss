@@ -79,8 +79,8 @@
     &.second_rectang {
       width: 900px;
       height: 500px;
-      bottom: -25%;
-      right: -30%;
+      bottom: -280px;
+      right: -450px;
     }
   }
 
@@ -93,13 +93,13 @@
     position: absolute;
 
     &.first_circle {
-      top: -75%;
-    right: -30%;
+      top: -700px;
+    right: -500px;
     }
 
     &.second_circle {
-      bottom: -65%;
-      left: -40%;
+      bottom: -650px;
+      left: -750px;
     }
   }
 }
