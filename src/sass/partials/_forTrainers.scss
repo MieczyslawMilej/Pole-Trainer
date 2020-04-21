@@ -1,0 +1,76 @@
+$ruler: 16px;
+$color-red: #ae1100;
+$color-bg: #ebecf0;
+$color-shadow: #babecc;
+$color-white: #fff;
+
+
+form {
+  padding: $ruler;
+  border-radius: 10px;
+  width: $ruler * 40;
+  margin: $ruler * 5 auto;
+  box-shadow: -5px -5px 10px $color-white, 2px 2px 5px $color-shadow;
+}
+
+button,
+input,
+textarea,
+select {
+  border: 0;
+  outline: 0;
+  font-size: $ruler;
+  border-radius: 10px;
+  padding: $ruler / 1.5;
+  margin: $ruler 0;
+  background-color: $bg-color;
+  text-shadow: 1px 1px 0 $color-white;
+}
+
+label {
+  display: inline-block;
+  font-weight: 600;
+  color: $bio-text-color;
+
+  width: 100%;
+}
+
+input, select, textarea {
+  margin-right: $ruler/2;
+  box-shadow: inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+
+  &:focus {
+    box-shadow: inset 1px 1px 2px $color-shadow,
+      inset -1px -1px 2px $color-white;
+  }
+}
+
+input, textarea {
+width: 100%;
+appearance: none;
+-webkit-appearance: none;
+
+&.short {
+  width:78%;
+}
+}
+
+button {
+  color: #61677c;
+  font-weight: bold;
+  box-shadow: -5px -5px 20px $color-white, 5px 5px 20px $color-shadow;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: -2px -2px 5px $color-white, 2px 2px 5px $color-shadow;
+  }
+
+  &:active {
+    box-shadow: inset 1px 1px 2px $color-shadow,
+      inset -1px -1px 2px $color-white;
+  }
+
+}
