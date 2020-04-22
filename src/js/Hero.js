@@ -10,8 +10,9 @@ export default function Hero() {
         <br />
         gdzie chcesz!
       </p>
-      <Link className="btn cta_btn" to="/main_app">
-        znajdź trenera
+      <Link className="" to="/main_app">
+
+        <button className="btn">znajdź trenera</button>
       </Link>
       <div className="links">
         <a className="social" href="https://www.facebook.com/" target="_blank">
