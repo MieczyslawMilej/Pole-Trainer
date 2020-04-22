@@ -4,10 +4,9 @@ export default function Card() {
   return (
     <div className="card">
       <div className="avatar"></div>
-      <div>
-        <p className="bold">Nazwisko</p>
-        <p className="">Imię</p>
-        <div className="price">50zł/H</div>
+      <div className="description_wrapper">
+        <p className="description bold">Nazwisko</p>
+        <p className="description">Imię</p>
         <div className="rating">
           <span className="star"></span>
           <span className="star"></span>
@@ -15,6 +14,7 @@ export default function Card() {
           <span className="star"></span>
           <span className="star"></span>
         </div>
+        <div className="price">50zł/H</div>
       </div>
     </div>
   );
