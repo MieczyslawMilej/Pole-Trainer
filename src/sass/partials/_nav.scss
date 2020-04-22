@@ -12,6 +12,7 @@ nav {
     letter-spacing: 0.19em;
     transition: all 0.3s ease;
     font-size: 1.5em;
+    width: 300px;
   }
 
   .nav_link:hover {
@@ -35,5 +36,9 @@ nav {
       transform: translate(-50%, -50%);
       width: 60%;
     }
+  }
+
+  & :last-child {
+    text-align: right;
   }
 }

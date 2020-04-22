@@ -45,11 +45,16 @@ export default function MainApp() {
   }
   return (
     <>
-      <div>
-        <header>
-          <Nav />
-        </header>
+      <div className="wrapper">
+        <Nav />
         <section className="main_app">
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
           <Card />
         </section>
       </div>
