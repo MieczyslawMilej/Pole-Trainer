@@ -1,8 +1,8 @@
 $ruler: 16px;
-$color-red: #ae1100;
-$color-bg: #ebecf0;
-$color-shadow: #babecc;
-$color-white: #fff;
+
+.form_wrapper {
+overflow: auto;
+}
 
 
 form {
@@ -57,7 +57,7 @@ appearance: none;
 }
 }
 
-button {
+button, .btn {
   color: #61677c;
   font-weight: bold;
   box-shadow: -5px -5px 20px $color-white, 5px 5px 20px $color-shadow;
