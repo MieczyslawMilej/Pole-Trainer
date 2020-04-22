@@ -7,7 +7,7 @@ export default function Nav() {
   return (
     <nav>
       <Link className="nav_link" to="/pole_studios">Studia w Krakowie</Link>
-      <Link className="logo" to="/"><img src={logo_pole_trainer} alt="logo" /></Link>
+      <Link className="logo" to="/"><img className="logo_img" src={logo_pole_trainer} alt="logo" /></Link>
       <Link className="nav_link" to="/trainers">Dla trenerów</Link>
     </nav>
   );

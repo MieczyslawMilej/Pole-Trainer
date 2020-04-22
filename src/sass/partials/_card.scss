@@ -16,9 +16,16 @@
   .avatar {
     width: 100%;
     height: 75%;
-    background: url("http://www.chodznapoledance.pl/wilczynska.JPG") no-repeat
-      center;
-    background-size: cover;
+    text-align: center;
+    // background: url("http://www.chodznapoledance.pl/wilczynska.JPG") no-repeat
+    //   center;
+    // background-size: cover;
+
+    .avatar_img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
   }
 
   .description_wrapper {

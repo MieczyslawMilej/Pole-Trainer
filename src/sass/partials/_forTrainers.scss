@@ -1,9 +1,8 @@
 $ruler: 16px;
 
 .form_wrapper {
-overflow: auto;
+  overflow: auto;
 }
-
 
 form {
   padding: $ruler;
@@ -11,6 +10,19 @@ form {
   width: $ruler * 40;
   margin: $ruler * 5 auto;
   box-shadow: -5px -5px 10px $color-white, 2px 2px 5px $color-shadow;
+
+  & ::placeholder {
+    color: $second-txt-color;
+  }
+
+  & :-ms-input-placeholder {
+    color: red;
+  }
+
+  & ::-ms-input-placeholder {
+    color: red;
+  }
+
 }
 
 button,
@@ -35,7 +47,9 @@ label {
   width: 100%;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   margin-right: $ruler/2;
   box-shadow: inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
   box-sizing: border-box;
@@ -47,17 +61,20 @@ input, select, textarea {
   }
 }
 
-input, textarea {
-width: 100%;
-appearance: none;
--webkit-appearance: none;
+input,
+textarea {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
 
-&.short {
-  width:78%;
-}
+  &.short {
+    width: 80%;
+  }
 }
 
-button, .btn {
+button,
+.btn {
+  padding: 10px 30px;
   color: #61677c;
   font-weight: bold;
   box-shadow: -5px -5px 20px $color-white, 5px 5px 20px $color-shadow;
@@ -72,5 +89,32 @@ button, .btn {
     box-shadow: inset 1px 1px 2px $color-shadow,
       inset -1px -1px 2px $color-white;
   }
+}
 
+.right {
+  float: right;
+}
+
+.blob {
+  @include boxInset;
+  display: inline-block;
+  padding: 12px;
+  border-radius: $border-radius /1.7;
+  margin: 0 10px 10px 0;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.blob_box {
+  @include boxInset;
+  display: inline-block;
+  padding: 20px;
+  border-radius: $border-radius;
+  margin: 20px 20px 20px 0;
+}
+
+.blob_text {
+  padding-bottom: 7px;
 }

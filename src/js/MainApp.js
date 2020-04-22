@@ -45,17 +45,14 @@ export default function MainApp() {
   }
   return (
     <>
-      <div className="wrapper">
+      <div className="main_app_wrapper">
         <Nav />
         <section className="main_app">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+        {
+          data.map(e=> <Card data={e}/>
+          )
+        }
+
         </section>
       </div>
     </>

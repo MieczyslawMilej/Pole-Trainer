@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import logo_pole_trainer from "./../images/logo_pole_trainer.svg";
 
 export default function ForTrainers() {
-
   const element = {
     name: "",
     surname: "",
@@ -72,22 +71,22 @@ export default function ForTrainers() {
       return;
     }
     if (data.experience.length < 0) {
-      setMessage("Wybierz doświadczenie");
+      setMessage("Wybierz lata doświadczenia.");
       return;
     }
     if (data.price.length < 1) {
-      setMessage("Cena nie może być puste");
+      setMessage("Stawka godzinowa nie może być pusta.");
       return;
     }
     if (data.phone.length < 9) {
-      setMessage("Numer musi zawierać minimum 9 cyfr");
+      setMessage("Numer musi zawierać minimum 9 cyfr.");
       return;
     }
     if (data.bio.length < 120) {
-      setMessage("Message should be at least 120 characters long.");
+      setMessage("Opis musi zawierać minimum 120 znaków.");
       return;
     }
-    if (data.picture.length < 2) {
+    if (data.picture.length < 1) {
       setMessage("Dodaj link do zdjęcia.");
       return;
     }
@@ -99,13 +98,14 @@ export default function ForTrainers() {
       body: JSON.stringify(data),
       headers: {
         "Content-Type": "application/json",
-        "secret-key": "$2b$10$Emtr4pxCUtwgh7HANul37u5uxXHbgZC7qEpK7mxpWr.vLMKMiPDK2",
+        "secret-key":
+          "$2b$10$Emtr4pxCUtwgh7HANul37u5uxXHbgZC7qEpK7mxpWr.vLMKMiPDK2",
         "collection-id": "5e9ffc212940c704e1dc8cc1"
       }
     })
       .then(response => response.json())
       .then(data => {
-        setMessage("Dodano profil!", data);
+        setMessage("Dodano profil!");
       })
       .catch(error => {
         setMessage(error);
@@ -115,7 +115,6 @@ export default function ForTrainers() {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        {message && <p>{message}</p>}
         <label>
           Imię
           <input
@@ -123,7 +122,7 @@ export default function ForTrainers() {
               setData(prev => ({ ...prev, name: target.value }))
             }
             className=""
-            placeholder={data.name}
+            placeholder="Joanna"
             type="text"
           />
         </label>
@@ -135,7 +134,7 @@ export default function ForTrainers() {
               setData(prev => ({ ...prev, surname: target.value }))
             }
             className=""
-            placeholder={data.surname}
+            placeholder="Nowak"
             type="text"
           />
         </label>
@@ -164,14 +163,14 @@ export default function ForTrainers() {
         </label>
         <br />
         <label>
-          Cena zajęć
+          Stawka godzinowa
           <input
             onChange={({ target }) =>
               setData(prev => ({ ...prev, price: target.value }))
             }
             className=""
             type="number"
-            placeholder={data.price}
+            placeholder="50"
           />
         </label>
         <br />
@@ -183,7 +182,7 @@ export default function ForTrainers() {
             }
             className=""
             type="number"
-            placeholder={data.phone}
+            placeholder="123456789"
           />
         </label>
         <br />
@@ -195,7 +194,7 @@ export default function ForTrainers() {
             }
             className=""
             type="text"
-            placeholder={data.picture}
+            placeholder="https://source.unsplash.com/AxI9niqj_60"
           />
         </label>
         <br />
@@ -206,13 +205,19 @@ export default function ForTrainers() {
             className="short"
             type="text"
             value={poleClass}
-            placeholder="dodaj zajęcia"
+            placeholder="Exotic"
           />
-          <button onClick={addPoleClass}>Dodaj zajęcia</button>
+          <button className="right" onClick={addPoleClass}>
+            Dodaj
+          </button>
         </label>
         {data.classes.length > 0 &&
           data.classes.map((e, i) => {
-            return <p key={e}>{e}</p>;
+            return (
+              <p className="blob" key={e}>
+                {e}
+              </p>
+            );
           })}
         <br />
         <label>
@@ -224,7 +229,7 @@ export default function ForTrainers() {
             className=""
             type="text"
             value={data.facebook}
-            placeholder="dodaj link do facebooka"
+            placeholder="Link do facebooka"
           />
         </label>
         <br />
@@ -237,7 +242,7 @@ export default function ForTrainers() {
             className=""
             type="text"
             value={data.intagram}
-            placeholder="dodaj link do instagrama"
+            placeholder="Link do instagrama"
           />
         </label>
         <br />
@@ -248,7 +253,7 @@ export default function ForTrainers() {
             className=""
             type="text"
             value={poleSchoolName}
-            placeholder="dodaj zajęcia"
+            placeholder="Nazwa studia"
           />
           <br />
           <input
@@ -256,46 +261,70 @@ export default function ForTrainers() {
             className="short"
             type="text"
             value={poleHour}
-            placeholder="dodaj godziny zajęć"
+            placeholder="Godziny zajęć (np. pon 8:00)"
           />
-          <button onClick={addPoleHours} type="button">
-            Dodaj godziny
+          <button className="right" onClick={addPoleHours} type="button">
+            Dodaj
           </button>
           <br />
         </label>
         {poleHours.map((e, i) => {
-          return <p key={i}>{e}</p>;
+          return (
+            <p className="blob" key={i}>
+              {e}
+            </p>
+          );
         })}
-        <button onClick={addSchedule} type="button">
-        Stwórz plan
+        <button
+          style={{ display: "block" }}
+          onClick={addSchedule}
+          type="button"
+        >
+          Stwórz plan
         </button>
         {data.schedule.map((e, i) => {
           return (
-            <>
-              <p key={i}>{e.school}</p>
-              {e.hours.map((e, i) => (
-                <p key={i}> {e}</p>
-              ))}
-            </>
+            <div className="blob_box" key={e.school}>
+              <p className="bold blob_text">
+                {e.school}
+              </p>
+              <ul>
+                {e.hours.map((e, i) => (
+                  <li key={i}>
+                    <p className="blob_text">
+                      {e}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
           );
         })}
         <br />
         <label>
-          Bio
+          Krótki opis
           <textarea
             onChange={({ target }) =>
               setData(prev => ({ ...prev, bio: target.value }))
             }
-            className=""
             placeholder="Napisz coś o sobie"
             rows="10"
             value={data.bio}
           />
         </label>
         <br />
-        <button className="" type="submit">
-          Dodaj
-        </button>
+        <button type="submit">Stwórz profil</button>
+        {message && (
+          <p
+            style={{
+              color: "red",
+              textAlign: "center",
+              display: "inline-block"
+            }}
+          >
+            {message}
+          </p>
+        )}
       </form>
     </>
   );
@@ -309,7 +338,6 @@ export default function ForTrainers() {
 //   type="number"
 //   placeholder={data.experience}
 // />
-
 
 //   const element = {
 //     name: "Katarzyna",
