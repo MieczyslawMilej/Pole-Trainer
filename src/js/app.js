@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./../sass/style.scss"; // adres do głównego pliku SASS
+import "./../sass/style.scss";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 
 import LandingPage from "./LandingPage";

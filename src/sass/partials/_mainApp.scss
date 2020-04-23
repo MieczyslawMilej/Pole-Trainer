@@ -1,5 +1,6 @@
 .app_wrapper {
   width: 1000px;
+  height: 100%;
   margin: 0 auto;
 }
 
@@ -7,4 +8,5 @@
   @include displayFlexCenter;
   padding: 30px;
   flex-wrap: wrap;
+  min-height: 50%;
 }

@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
+import { TweenMax, TimelineMax, Power3 } from "gsap";
 
 export default function Card({ data }) {
+  const { picture, surname, name, price } = data;
+  let cardRef = useRef(null);
 
-  const {picture, surname, name, price} = data;
+  useEffect(() => {
+      TweenMax.staggerFrom(cardRef, 5, { opacity: 0, ease: Power3.easeOut}, 0.5)
+  },[])
+
+
   return (
-    <div className="card">
+    <div
+      className="card"
+      ref={element => {
+        cardRef = element;
+      }}
+    >
       <div className="avatar">
         <img className="avatar_img" src={picture} alt="avatar" />
       </div>
