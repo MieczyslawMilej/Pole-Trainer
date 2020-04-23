@@ -5,12 +5,13 @@
   border-radius: 10px;
   overflow: hidden;
   margin: 30px;
-  @include boxShadowInset;
+  @include boxShadow;
   cursor: pointer;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out , box-shadow 0.3s ease-in-out;
 
   &:hover {
     transform: translateY(-5px);
+    @include boxShadowInsetLarge;
   }
 
   .avatar {
@@ -55,7 +56,7 @@
     .rating {
       height: 15px;
       display: inline-block;
-      margin-top:5px;
+      margin-top: 5px;
     }
 
     .star {
@@ -67,5 +68,4 @@
       padding-right: 5px;
     }
   }
-
 }

@@ -44,18 +44,14 @@ export default function MainApp() {
     return "Loading...";
   }
   return (
-    <>
-      <div className="main_app_wrapper">
-        <Nav />
-        <section className="main_app">
-        {
-          data.map(e=> <Card data={e}/>
-          )
-        }
-
-        </section>
-      </div>
-    </>
+    <div className="app_wrapper">
+      <Nav />
+      <section className="main_app">
+        {data.map((e,i) => (
+          <Card key={i} data={e} />
+        ))}
+      </section>
+    </div>
   );
 }
 

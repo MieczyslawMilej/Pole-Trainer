@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo_pole_trainer from "./../images/logo_pole_trainer.svg";
+import Nav from "./Nav";
 
 export default function ForTrainers() {
   const element = {
@@ -33,11 +34,13 @@ export default function ForTrainers() {
   }
 
   function addPoleHours(e) {
+    e.preventDefault();
     setPoleHours(prev => [...prev, poleHour]);
     setPoleHour("");
   }
 
   function addSchedule(e) {
+    e.preventDefault();
     const poleClassesData = {
       school: poleSchoolName,
       hours: poleHours
@@ -113,7 +116,8 @@ export default function ForTrainers() {
   }
 
   return (
-    <>
+    <div className="app_wrapper">
+      <Nav />
       <form onSubmit={handleSubmit}>
         <label>
           Imię
@@ -285,15 +289,11 @@ export default function ForTrainers() {
         {data.schedule.map((e, i) => {
           return (
             <div className="blob_box" key={e.school}>
-              <p className="bold blob_text">
-                {e.school}
-              </p>
+              <p className="bold blob_text">{e.school}</p>
               <ul>
                 {e.hours.map((e, i) => (
                   <li key={i}>
-                    <p className="blob_text">
-                      {e}
-                    </p>
+                    <p className="blob_text">{e}</p>
                   </li>
                 ))}
               </ul>
@@ -326,7 +326,7 @@ export default function ForTrainers() {
           </p>
         )}
       </form>
-    </>
+    </div>
   );
 }
 //
