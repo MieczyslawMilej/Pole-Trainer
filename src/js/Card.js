@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import { TweenMax, TimelineMax, Power3 } from "gsap";
+import Modal from "./Modal";
 
 export default function Card({ data }) {
   const { picture, surname, name, price } = data;
@@ -11,6 +12,7 @@ export default function Card({ data }) {
 
 
   return (
+    <>
     <div
       className="card"
       ref={element => {
@@ -33,5 +35,7 @@ export default function Card({ data }) {
         <div className="price">{price}zł/H</div>
       </div>
     </div>
+    <Modal cardData={data}/>
+    </>
   );
 }

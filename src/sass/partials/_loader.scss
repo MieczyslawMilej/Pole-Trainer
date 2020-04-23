@@ -59,7 +59,7 @@ $perspective: 2200px;
 }
 
 .cube .center{
-  width: $bar-width; rgba(255,255,255,.05);
+  width: $bar-width;
   animation: animCenter;
   animation-iteration-count: infinite;
 }

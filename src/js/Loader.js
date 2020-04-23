@@ -7,7 +7,7 @@ export default function Loader() {
     let loader = useRef(null);
     let tl = new TimelineLite({ delay: 0.8 });
     useEffect(() => {
-      
+
       tl.from(loader, 2, { opacity: 0, ease: Power3.easeOut}, .8)
 
     }, [tl]);

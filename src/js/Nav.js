@@ -23,7 +23,7 @@ export default function Nav() {
       .from(firstLink, 2, { opacity: 0, ease: Power3.easeOut }, 0.6)
       .from(lastLink, 0.8, { x: 100, ease: Power3.easeOut }, 0.3)
       .from(lastLink, 2, { opacity: 0, ease: Power3.easeOut }, 0.6);
-  }, [tl]);
+  }, []);
 
   return (
     <nav ref={el => (nav = el)}>
