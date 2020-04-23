@@ -15,54 +15,53 @@ export default function Modal({ cardData }) {
     instagram,
     phone
   } = cardData;
-  const [showModal, setShowModal] = useState(false);
 
-  // useEffect(() => {
-  //   // TweenMax.staggerFrom(cardRef, 5, { opacity: 0, ease: Power3.easeOut }, 0.5);
-  // }, []);
+const [hideModal, setHideModal] = useState(false);
 
   return (
-    <div className="modal">
-      <div>
+    <div className="modal" style={{display: hideModal ? "none" : "block"}}>
+      <div className="modal_wrapper">
         <div className="left_section">
-          <div className="avatar"></div>
+          <div className="avatar">
+            <img src={picture} alt="avatar" />
+          </div>
           <div className="small_info">
             <div className="price_info">
-              <p className="price bold">{price}zł/H</p>
-              <p className="price">Stawka godzinowa</p>
+              <p className="price">{price}zł/H</p>
+              <p className="price grey">Stawka godzinowa</p>
             </div>
             <div className="experience_info">
-              <p className="experience bold">{experience} LAT</p>
-              <p className="experience">Doświadczenie</p>
+              <p className="experience">{experience} LAT</p>
+              <p className="experience grey">Doświadczenie</p>
             </div>
             <div className="city_info">
-              <p className="city bold">KRAKÓW</p>
-              <p className="city">Miasto</p>
+              <p className="city">KRAKÓW</p>
+              <p className="city grey">Miasto</p>
             </div>
           </div>
-          <div className="contact">
+          <div className="contact grey">
             <p className="title">Kontakt</p>
             <p className="phone">{phone}</p>
             <p className="email">twoj.email@gmail.com</p>
           </div>
-          <div className="social_media">
-            <p className="title">Social Media</p>
-            <a href={facebook} className="facebook">
-              Facebook
-            </a>
-            <a href={instagram} className="instagram">
-              Instagram
-            </a>
+          <div className="social grey">
+            <p className="title social_title">Social Media</p>
+            <div className="links_wrapper">
+              <p className="facebook">Facebook</p>
+              <p className="instagram">Instagram</p>
+            </div>
           </div>
         </div>
         <div className="right_section">
+        <div onClick={()=> setHideModal(true)} className="cross"></div>
           <div className="bio_wrapper">
-            <h2 className="bio_heading bold">{surname}</h2>
+            <h2 className="bio_heading">{surname}</h2>
             <h2 className="bio_sub_heading">{name}</h2>
+            <button>Wiadomość</button>
             <p className="bio_text">{bio}</p>
           </div>
           <div className="classes_wrapper">
-            <p className="title">Rodzaje Zajęć</p>
+            <p className="title grey">Rodzaje Zajęć</p>
             {classes.map((e, i) => (
               <p key={i} className="blob">
                 {e}
@@ -70,12 +69,14 @@ export default function Modal({ cardData }) {
             ))}
           </div>
           <div className="schools_wrapper">
-            <p className="title">Gdzie Uczę</p>
+            <p className="title grey">Gdzie Uczę</p>
             {schedule.map((e, i) => (
-              <div key={i} className="blob">
-                <p>{e.school}</p>
+              <div key={i} className="school_blob blob">
+                <p className="school_heading">{e.school}</p>
                 <ul>
-                  {e.hours.map( (el, i)=> <p key={i}>{el}</p>)}
+                  {e.hours.map((el, i) => (
+                    <p className="hours" key={i}>{el}</p>
+                  ))}
                 </ul>
               </div>
             ))}

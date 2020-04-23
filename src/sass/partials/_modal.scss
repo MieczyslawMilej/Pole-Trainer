@@ -1,0 +1,182 @@
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background: #f8f8f8;
+}
+
+.modal_wrapper {
+  width: 100%;
+  max-width: 800px;
+  max-height: 900px;
+  display: flex;
+  @include boxShadow;
+  border-radius: $border-radius / 2;
+}
+
+.left_section {
+  width: 40%;
+  padding: 1em 1.5em;
+  border-radius: 10px 0 0 10px;
+  background-color: $bg-color;
+}
+
+.avatar {
+  width: 100%;
+  height: 55%;
+  border-radius: $border-radius / 2;
+  overflow: hidden;
+
+  & img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.small_info {
+  padding: 1em 0;
+  font-size: 14px;
+  border-bottom: 1px solid lighten($color-shadow, 10);
+  position: relative;
+
+  & p {
+    padding-bottom: 0.3em;
+    padding-left: 30px;
+    font-weight: 700;
+  }
+}
+
+@mixin icon($url) {
+  content: "";
+  background: url($url) no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-70%);
+}
+
+.price_info,
+.experience_info,
+.city_info {
+  position: relative;
+  padding-bottom: 0.5em;
+}
+
+.price_info::before {
+  @include icon("./../images/dolar.svg");
+}
+
+.experience_info::before {
+  @include icon("./../images/time.svg");
+}
+
+.city_info::before {
+  @include icon("./../images/location.svg");
+}
+
+.grey {
+  color: lighten($bio-text-color, 15);
+  font-weight: 700;
+}
+
+.contact {
+  padding: 1em 0;
+  border-bottom: 1px solid lighten($color-shadow, 10);
+
+  & .phone {
+    font-weight: 400;
+    color: $cta-color;
+    padding: 0.5em 0;
+  }
+
+  & .email {
+    @extend .phone;
+  }
+}
+
+.title {
+  padding-bottom: 0.5em;
+}
+
+.social_title{
+  padding-top: 1em;
+}
+
+.facebook, .instagram {
+  font-weight: 400;
+  padding: 1em 1em 0 0;
+  color: $main-txt-color;
+}
+
+.links_wrapper {
+  display: flex;
+}
+
+.right_section {
+  width: 60%;
+  padding: 1.5em;
+  border-radius: $border-radius / 2;
+  overflow: auto;
+  position: relative;
+}
+
+.cross {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  background: url("./../images/cross.svg") no-repeat center;
+
+}
+
+.bio_wrapper, .classes_wrapper, .schools_wrapper {
+  padding: 1em 0;
+  font-size: 14px;
+  border-bottom: 1px solid lighten($color-shadow, 10);
+}
+
+.bio_heading {
+  font-size: 2em;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+}
+
+.bio_sub_heading {
+  font-size: 2em;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  padding-bottom: 0.5em;
+}
+
+.bio_text {
+  color: $bio-text-color;
+  letter-spacing: 0.1em;
+  line-height: 130%;
+}
+
+
+.school_heading {
+  padding-bottom: .5em;
+  font-weight: 700;
+  color: $bio-text-color;
+
+}
+
+.school_blob {
+  min-width: 100px;
+}
+
+.hours {
+  padding: 0.25em 0;
+}
