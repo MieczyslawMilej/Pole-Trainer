@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import logo_pole_trainer from "./../images/logo_pole_trainer.svg";
 import Nav from "./Nav";
 
@@ -26,17 +25,23 @@ export default function ForTrainers() {
   const [poleHours, setPoleHours] = useState([]);
 
   function addPoleClass(e) {
-    setData(prev => ({
-      ...prev,
-      classes: [...prev.classes, poleClass]
-    }));
-    setPoleClass("");
+    e.preventDefault();
+    if (!poleClass.length == 0) {
+      setData(prev => ({
+        ...prev,
+        classes: [...prev.classes, poleClass]
+      }));
+      setPoleClass("");
+    }
   }
 
   function addPoleHours(e) {
     e.preventDefault();
-    setPoleHours(prev => [...prev, poleHour]);
-    setPoleHour("");
+
+    if (!poleHour.length == 0) {
+      setPoleHours(prev => [...prev, poleHour]);
+      setPoleHour("");
+    }
   }
 
   function addSchedule(e) {
@@ -46,21 +51,14 @@ export default function ForTrainers() {
       hours: poleHours
     };
 
-    setData(prev => {
-      return { ...prev, schedule: [...prev.schedule, poleClassesData] };
-    });
-
-    setPoleHours([]);
-    setSchoolName("");
+    if (!poleHours.length == 0 && !poleSchoolName.length == 0) {
+      setData(prev => {
+        return { ...prev, schedule: [...prev.schedule, poleClassesData] };
+      });
+      setPoleHours([]);
+      setSchoolName("");
+    }
   }
-
-  // function addSocialMedia(e) {
-  //   setData(prev => ({
-  //     ...prev,
-  //     socialMedia: [...prev.socialMedia, socialMedia]
-  //   }));
-  //   setSocialMedia("");
-  // }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -85,12 +83,28 @@ export default function ForTrainers() {
       setMessage("Numer musi zawierać minimum 9 cyfr.");
       return;
     }
-    if (data.bio.length < 120) {
-      setMessage("Opis musi zawierać minimum 120 znaków.");
-      return;
-    }
     if (data.picture.length < 1) {
       setMessage("Dodaj link do zdjęcia.");
+      return;
+    }
+    if (data.facebook.length < 1) {
+      setMessage("Dodaj link do facebooka.");
+      return;
+    }
+    if (data.instagram.length < 1) {
+      setMessage("Dodaj link do instagrama.");
+      return;
+    }
+    if (data.classes.length == 0) {
+      setMessage("Musisz dodać zajęcia.");
+      return;
+    }
+    if (poleHour.length == 0) {
+      setMessage("Musisz dodać godziny.");
+      return;
+    }
+    if (data.bio.length < 120) {
+      setMessage("Opis musi zawierać minimum 120 znaków.");
       return;
     }
 
@@ -316,10 +330,12 @@ export default function ForTrainers() {
         <button type="submit">Stwórz profil</button>
         {message && (
           <p
+            className="blob"
             style={{
               color: "red",
               textAlign: "center",
-              display: "inline-block"
+              display: "inline-block",
+              marginLeft: "20px"
             }}
           >
             {message}
