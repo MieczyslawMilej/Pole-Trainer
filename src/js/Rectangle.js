@@ -1,12 +1,9 @@
-import React, { useEffect, useRef } from "react";
-import { TimelineLite, TweenMax, Power3 } from "gsap";
+import React from "react";
 
-export default function Rectangle() {
-  let rectangle = useRef(null);
-  let tl = new TimelineLite({ delay: 0.8 });
-  useEffect(() => {
-    // tl.from(rectangle, 2, { opacity: 0, ease: Power3.easeOut }, 0.8);
-  }, [tl]);
-
-  return <div className="bg-rectangle" ref={el => (rectangle = el)}></div>;
+export default function Rectangle({className}) {
+  return (
+    <div className={className}>
+      <div className="bg-rectangle"></div>
+    </div>
+  );
 }

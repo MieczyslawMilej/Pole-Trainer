@@ -41,7 +41,7 @@ export default function Hero() {
         <br />
         gdzie chcesz!
       </p>
-      <Link style={{display: "block"}} to="/main_app">
+      <Link style={{display: "inline-block"}} to="/main_app">
 
         <button className="btn">znajdź trenera</button>
       </Link>

@@ -1,12 +1,9 @@
-import React, { useEffect, useRef } from "react";
-import { TimelineLite, TweenMax, Power3 } from "gsap";
+import React from "react";
 
-export default function Circle() {
-  let circle = useRef(null);
-  let tl = new TimelineLite({ delay: 0.8 });
-  // useEffect(() => {
-  //   tl.from(circle, 2, { opacity: 0, ease: Power3.easeOut }, 0.8);
-  // }, [tl]);
+export default function Circle({className}) {
 
-  return <div className="bg-circle" ref={el => (circle = el)}></div>;
+
+  return <div className={className}>
+    <div className="bg-circle"></div>
+  </div>;
 }

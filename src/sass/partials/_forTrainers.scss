@@ -1,10 +1,11 @@
 $ruler: 16px;
 
 .app_wrapper {
-  position: relative;
 }
 
 form {
+  opacity: 1;
+  position: relative;
   padding: $ruler;
   border-radius: 10px;
   width: $ruler * 40;
@@ -117,4 +118,22 @@ button,
 
 .blob_text {
   padding-bottom: 7px;
+}
+
+.treiners_rectangle {
+  position: absolute;
+  left: -55%;
+  top: 10%;
+}
+
+.treiners_circle {
+  position: absolute;
+  right: -50%;
+  top: 40%;
+}
+
+.treiners_circle2 {
+  position: absolute;
+  left: -45%;
+  bottom: 10%;
 }

@@ -1,8 +1,17 @@
-.bg-rectangle{
-  position: absolute;
+.bg-rectangle {
   width: 200px;
   height: 200px;
   border-radius: $border-radius;
   background: linear-gradient(145deg, #fbfdff, #d4d4d8);
-  box-shadow: 14px 14px 28px #cccdd1, -14px -14px 28px #ffffff;
+  @include boxShadow;
+  transition: opacity 1s ease-in-out;
+  animation: breath 9s infinite 0s ease-in-out;
+  animation-direction: alternate;
+}
+
+@keyframes breath {
+  100% {
+    box-shadow: 0 0 0 #cccdd1,  0 0 0 #ffffff;
+    opacity: 0;
+  }
 }

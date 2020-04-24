@@ -121,7 +121,7 @@ $perspective: 2200px;
     30%  {  transform: translateZ($bar_height) translatex($transX) translateY($transY) rotatex($rotX) rotatey($rotY) rotateZ($rotZ);
 	          box-shadow: 10px 10px 20px rgba(0,0,0,.5), 0 12px 20px 1px rgba(255,255,255,.5);
 	 }
-255
+   
     100%  {
 	          transform: translateZ(0px) rotatez(0deg);
 	          box-shadow: 10px 10px 30px rgba(255,255,255,.5), 0 0 0 0 rgba(0,0,0,0);
