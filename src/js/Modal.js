@@ -1,6 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
 import { TweenMax, TimelineMax, Power3 } from "gsap";
 
+import cross from "./../images/cross.svg";
+
 export default function Modal({ cardData, showModal, setShowModal }) {
   const {
     picture,
