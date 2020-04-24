@@ -37,7 +37,7 @@ export default function Card({ data }) {
           <div className="price">{price}zł/H</div>
         </div>
       </div>
-      {showModal && <Modal cardData={data} />}
+      {<Modal showModal={showModal} setShowModal={setShowModal} cardData={data} />}
     </>
   );
 }

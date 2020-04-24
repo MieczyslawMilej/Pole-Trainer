@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import logo_pole_trainer from "./../images/logo_pole_trainer.svg";
 import Nav from "./Nav";
+import Circle from "./Circle";
+import Rectangle from "./Rectangle";
 
 export default function ForTrainers() {
   const element = {
@@ -132,6 +134,8 @@ export default function ForTrainers() {
   return (
     <div className="app_wrapper">
       <Nav />
+      <Circle/>
+      <Rectangle/>
       <form onSubmit={handleSubmit}>
         <label>
           Imię

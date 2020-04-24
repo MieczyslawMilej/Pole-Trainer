@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { TweenMax, TimelineMax, Power3 } from "gsap";
 
-export default function Modal({ cardData }) {
+export default function Modal({ cardData, showModal, setShowModal }) {
   const {
     picture,
     surname,
@@ -16,10 +16,24 @@ export default function Modal({ cardData }) {
     phone
   } = cardData;
 
-const [hideModal, setHideModal] = useState(false);
+  //
+  // let bg = useRef(null);
+  // let tl = new TimelineMax({ delay: 0.8 });
+  //
+  // useEffect(() => {
+  //
+  //
+  //   tl.from(bg.current, 1, { opacity: 0, ease: Power3.easeOut})
+  //   // .from(wrapperRef, .8, { x: -100, ease: Power3.easeOut }, 1)
+  //
+  // }, [tl]);
 
   return (
-    <div className="modal" style={{display: hideModal ? "none" : "block"}}>
+    <div
+      className="modal"
+      style={{ display: !showModal ? "none" : "flex" }}
+      onClick={() => setShowModal(false)}
+    >
       <div className="modal_wrapper">
         <div className="left_section">
           <div className="avatar">
@@ -53,7 +67,9 @@ const [hideModal, setHideModal] = useState(false);
           </div>
         </div>
         <div className="right_section">
-        <div onClick={()=> setHideModal(true)} className="cross"></div>
+          <div onClick={() => setShowModal(false)} className="cross">
+            <img className="shadow" src="./../images/cross.svg" alt="cross" />
+          </div>
           <div className="bio_wrapper">
             <h2 className="bio_heading">{surname}</h2>
             <h2 className="bio_sub_heading">{name}</h2>
@@ -75,7 +91,9 @@ const [hideModal, setHideModal] = useState(false);
                 <p className="school_heading">{e.school}</p>
                 <ul>
                   {e.hours.map((el, i) => (
-                    <p className="hours" key={i}>{el}</p>
+                    <p className="hours" key={i}>
+                      {el}
+                    </p>
                   ))}
                 </ul>
               </div>

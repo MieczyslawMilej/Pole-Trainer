@@ -19,13 +19,13 @@
   display: flex;
   @include boxShadow;
   border-radius: $border-radius / 2;
+  background-color: $bg-color;
 }
 
 .left_section {
   width: 40%;
   padding: 1em 1.5em;
   border-radius: 10px 0 0 10px;
-  background-color: $bg-color;
 }
 
 .avatar {
@@ -109,11 +109,12 @@
   padding-bottom: 0.5em;
 }
 
-.social_title{
+.social_title {
   padding-top: 1em;
 }
 
-.facebook, .instagram {
+.facebook,
+.instagram {
   font-weight: 400;
   padding: 1em 1em 0 0;
   color: $main-txt-color;
@@ -129,17 +130,34 @@
   border-radius: $border-radius / 2;
   overflow: auto;
   position: relative;
+  background: #f8f8f8;
 }
 
 .cross {
   position: absolute;
   height: 30px;
   width: 30px;
-  background: url("./../images/cross.svg") no-repeat center;
-
+  right: 24px;
+  top: 24px;
+  cursor: pointer;
 }
 
-.bio_wrapper, .classes_wrapper, .schools_wrapper {
+.shadow {
+  // -webkit-filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.3));
+  // filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.3));
+  width: 100%;
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+
+  &:hover {
+    -webkit-filter: drop-shadow(6px 6px 6px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(6px 6px 6px rgba(0, 0, 0, 0.1));
+    transform: translateY(-5px);
+  }
+}
+
+.bio_wrapper,
+.classes_wrapper,
+.schools_wrapper {
   padding: 1em 0;
   font-size: 14px;
   border-bottom: 1px solid lighten($color-shadow, 10);
@@ -165,12 +183,10 @@
   line-height: 130%;
 }
 
-
 .school_heading {
-  padding-bottom: .5em;
+  padding-bottom: 0.5em;
   font-weight: 700;
   color: $bio-text-color;
-
 }
 
 .school_blob {
