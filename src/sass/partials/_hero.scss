@@ -2,7 +2,7 @@
 
   h1 {
     width: 100%;
-    font-size: 8.391em;
+    font-size: 5em;
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.33em;
@@ -14,7 +14,7 @@
 
   p {
     text-align: left;
-    font-size: 1.8em;
+    font-size: 1.5em;
     text-transform: uppercase;
     letter-spacing: 0.33em;
     line-height: 1.8em;
@@ -22,7 +22,7 @@
   }
 
   .btn {
-    font-size: 1.2em;
+    font-size: 1em;
     letter-spacing: 0.165em;
     color: $cta-color;
     border-radius: 8px;
@@ -56,8 +56,8 @@
   }
 
   .rectangle {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     background-color: $bg-color;
     @include boxShadowInsetRectangle;
     position: absolute;
@@ -65,34 +65,34 @@
     transform: rotate(47deg);
 
     &.first_rectang {
-      top: -157px;
-    left: -105px;
+      top: -127px;
+    left: -75px;
     }
 
     &.second_rectang {
-      width: 900px;
-      height: 500px;
+      width: 600px;
+      height: 300px;
       bottom: -280px;
-      right: -450px;
+      right: -250px;
     }
   }
 
   .circle {
-    width: 900px;
-    height: 900px;
+    width: 600px;
+    height: 600px;
     border-radius: 50%;
     background-color: $cta-color;
     @include boxShadowInset;
     position: absolute;
 
     &.first_circle {
-      top: -700px;
-    right: -500px;
+      top: -400px;
+    right: -300px;
     }
 
     &.second_circle {
-      bottom: -650px;
-      left: -750px;
+      bottom: -450px;
+      left: -450px;
     }
   }
 }
