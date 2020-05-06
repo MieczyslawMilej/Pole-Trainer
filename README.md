@@ -1,6 +1,6 @@
 # Pole-Trainer
 
-[Podgląd projektu](https://mieczyslawmilej.github.io/Pole-Trainer/build/) - The web framework used
+[Podgląd projektu](https://mieczyslawmilej.github.io/Pole-Trainer/build/)
 
 ## Do projektu wykorzystałem:
 
