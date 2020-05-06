@@ -29,24 +29,20 @@ export default function ForTrainers() {
   const [poleHour, setPoleHour] = useState("");
   const [poleHours, setPoleHours] = useState([]);
 
-
   let form = useRef(null);
   let tl = new TimelineLite({ delay: 1 });
 
-
   useEffect(() => {
-
-      const recatngle = form.firstElementChild;
-      const circle1 = recatngle.nextSibling;
+    const recatngle = form.firstElementChild;
+    const circle1 = recatngle.nextSibling;
 
     tl.from(form, 1, { y: 800, ease: Power3.easeOut })
-    .from(form, 1, { opacity: 0, ease: Power3.easeOut}, 0)
-    .from(recatngle, 0.5, { x: -500, ease: Power3.easeOut })
-    .from(recatngle, 0.5, { opacity: 0, ease: Power3.easeOut}, 0)
-    .from(circle1, 0.5, { x: 500, ease: Power3.easeOut })
-    .from(circle1, 0.5, { opacity: 0, ease: Power3.easeOut}, 0)
-
-  }, [tl]);
+      .from(form, 1, { opacity: 0, ease: Power3.easeOut }, 0)
+      .from(recatngle, 0.5, { x: -500, ease: Power3.easeOut })
+      .from(recatngle, 0.5, { opacity: 0, ease: Power3.easeOut }, 0)
+      .from(circle1, 0.5, { x: 500, ease: Power3.easeOut })
+      .from(circle1, 0.5, { opacity: 0, ease: Power3.easeOut }, 0);
+  }, []);
 
   function addPoleClass(e) {
     e.preventDefault();
@@ -123,7 +119,7 @@ export default function ForTrainers() {
       setMessage("Musisz dodać zajęcia.");
       return;
     }
-    if (poleHour.length == 0) {
+    if (poleHour.length == 0 && data.schedule.length < 0) {
       setMessage("Musisz dodać godziny.");
       return;
     }
@@ -156,10 +152,10 @@ export default function ForTrainers() {
   return (
     <div className="app_wrapper">
       <Nav />
-      <form ref={el => form = el} onSubmit={handleSubmit}>
-      <Rectangle className="treiners_rectangle" />
-      <Circle className="treiners_circle" />
-      <Circle className="treiners_circle2" />
+      <form ref={el => (form = el)} onSubmit={handleSubmit}>
+        <Rectangle className="treiners_rectangle" />
+        <Circle className="treiners_circle" />
+        <Circle className="treiners_circle2" />
         <label>
           Imię
           <input
