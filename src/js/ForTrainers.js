@@ -30,17 +30,17 @@ export default function ForTrainers() {
   const [poleHours, setPoleHours] = useState([]);
 
   let form = useRef(null);
-  let tl = new TimelineLite({ delay: 1 });
+  let tl = new TimelineLite({ delay: 2 });
 
   useEffect(() => {
     const recatngle = form.firstElementChild;
     const circle1 = recatngle.nextSibling;
 
-    tl.from(form, 1, { y: 800, ease: Power3.easeOut })
+    tl.from(form, 0.8, { y: 500, ease: "back.out(1.7)" })
       .from(form, 1, { opacity: 0, ease: Power3.easeOut }, 0)
-      .from(recatngle, 0.5, { x: -500, ease: Power3.easeOut })
+      .from(recatngle, 0.5, { x: -500, ease: "back.out(1.7)" })
       .from(recatngle, 0.5, { opacity: 0, ease: Power3.easeOut }, 0)
-      .from(circle1, 0.5, { x: 500, ease: Power3.easeOut })
+      .from(circle1, 0.5, { x: 500, ease: "back.out(1.7)" })
       .from(circle1, 0.5, { opacity: 0, ease: Power3.easeOut }, 0);
   }, []);
 
