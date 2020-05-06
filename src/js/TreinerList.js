@@ -36,10 +36,10 @@ export default function TreinerList() {
       .then(data => {
         data.records.forEach(bin => {
           loadBin(bin.id);
+          console.log(data.records);
         });
       });
   }, []);
-
   let content = <Loader />;
   if (data) {
     content = data.map((el, i) => <Card key={i} data={el} />);

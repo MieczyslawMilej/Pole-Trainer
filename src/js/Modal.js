@@ -18,18 +18,6 @@ export default function Modal({ cardData, showModal, setShowModal }) {
     phone
   } = cardData;
 
-  //
-  // let bg = useRef(null);
-  // let tl = new TimelineMax({ delay: 0.8 });
-  //
-  // useEffect(() => {
-  //
-  //
-  //   tl.from(bg.current, 1, { opacity: 0, ease: Power3.easeOut})
-  //   // .from(wrapperRef, .8, { x: -100, ease: Power3.easeOut }, 1)
-  //
-  // }, [tl]);
-
   return (
     <div
       className="modal"

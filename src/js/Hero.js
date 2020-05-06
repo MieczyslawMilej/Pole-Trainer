@@ -6,7 +6,7 @@ export default function Hero() {
 
 
   let hero = useRef(null);
-  let tl = new TimelineLite({ delay: 0.8 });
+  let tl = new TimelineLite({ delay: 2 });
 
   useEffect(() => {
     const h1 = hero.firstElementChild;
@@ -21,11 +21,11 @@ export default function Hero() {
 
 
     tl.from(h1, 2, { opacity: 0, ease: Power3.easeOut})
-    .from(p, .8, { x: -100, ease: Power3.easeOut }, 1)
+    .from(p, .8, { x: -100, ease: "back.out" }, 1)
     .from(p, 3, { opacity: 0, ease: Power3.easeOut}, 1)
-    .from(button, .8, { x: -300, ease: Power3.easeOut }, 1)
+    .from(button, .8, { x: -300, ease: "back.out" }, 1)
     .from(button, 3, { opacity: 0, ease: Power3.easeOut}, 1)
-    .from(socialLinks, .8, { y: 800, ease: Power3.easeOut }, 0.6)
+    .from(socialLinks, .8, { y: 300, ease: "back.out" }, 0.6)
     .from(rectangle1, 2, { opacity: 0, ease: Power3.easeOut}, .5)
     .from(rectangle2, 2, { opacity: 0, ease: Power3.easeOut}, .5)
     .from(circle1, 1, { y: -800, ease: Power3.easeOut }, .2)
