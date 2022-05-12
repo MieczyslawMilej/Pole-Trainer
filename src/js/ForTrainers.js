@@ -368,27 +368,3 @@ export default function ForTrainers() {
     </div>
   );
 }
-//
-// <input
-//   onChange={({ target }) =>
-//     setData(prev => ({ ...prev, experience: target.value }))
-//   }
-//   className=""
-//   type="number"
-//   placeholder={data.experience}
-// />
-
-//   const element = {
-//     name: "Katarzyna",
-//     surname: "Wilczyńska",
-//     experience: "6",
-//     bio: `Od dzieciństwa związana z muzyką. Szkołę średnią ukończyła na profilach gry na fortepianie i rytmiki. Zajęcia, na które uczęszczała m.in. techniki ruchu oraz interpretacji muzyki, dały jej swobodę ruchowej wypowiedzi, płynności oraz improwizacji w tańcu. Absolwentka Akademii Muzycznej w Krakowie. Aktualnie przekazuje swoją wiedzę w dziedzinie gry na fortepianie najmłodszym, ucząc w szkole muzycznej. W Pole Dance odkryła swoją życiową pasję. Pragnie cały czas się rozwijać oraz przekazywać innym zdobyte umiejętności i wiedzę.
-// Certyfikowany instruktor fitness, stretching oraz Vertical Dance. Uczestniczka licznych szkoleń i warsztatów Pole Dance m.in. z Yvonne Smink, Anastasią Sokolovą, Alessandrą Marchetti, Patrycją Tazbir, Patrykiem Rybarskim, Magdaleną Marycz, Klaudią Nowak, Katarzyną Bigos, Iwoną Drzymałą. Brała również udział w warsztatach Aerial Dance (aerial hammock, aerial pole, aerial hoop).`,
-//     price: "50",
-//     phone: "123456789",
-//     picture: "http://www.chodznapoledance.pl/wilczynska.JPG",
-//     classes: ["Exotic","Pole Strength"],
-//     schedule: [{school: "Chodź na Pole Dance", hours: ["pon 14:00","wt 14:00","śr 14:00","czw 14:00",]}],
-//     facebook: "www.facebook.pl",
-//     instagram: "www.instagram.pl"
-//   };
