@@ -11,8 +11,6 @@ export default function LandingPage() {
   let heroImage = useRef(null);
   let tl = new TimelineLite({ delay: 0.3 });
   useEffect(() => {
-    // console.log(heroImage);
-
     TweenMax.to(landing, 0, { css: { visibility: "visible" } });
 
     tl.from(heroImage, 3, { opacity: 0, ease: Power3.easeOut}, 1.2)
