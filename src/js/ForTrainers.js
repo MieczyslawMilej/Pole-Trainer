@@ -21,6 +21,9 @@ export default function ForTrainers() {
     facebook: "",
     instagram: ""
   };
+  
+  const SECRET_KEY = process.env.REACT_APP_SECRET_KEY  
+
 
   const [message, setMessage] = useState("");
   const [data, setData] = useState(element);
@@ -135,8 +138,7 @@ export default function ForTrainers() {
       body: JSON.stringify(data),
       headers: {
         "Content-Type": "application/json",
-        "secret-key":
-          "$2b$10$Emtr4pxCUtwgh7HANul37u5uxXHbgZC7qEpK7mxpWr.vLMKMiPDK2",
+        "secret-key": REACT_APP_SECRET_KEY,
         "collection-id": "5e9ffc212940c704e1dc8cc1"
       }
     })
