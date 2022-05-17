@@ -5,14 +5,14 @@ import Loader from "./Loader";
 
 export default function TreinerList() {
   const [data, setData] = useState(null);
+  const SECRET_KEY = process.env.REACT_APP_SECRET_KEY  
 
   function loadBin(id) {
     fetch(`https://api.jsonbin.io/b/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "secret-key":
-          "$2b$10$Emtr4pxCUtwgh7HANul37u5uxXHbgZC7qEpK7mxpWr.vLMKMiPDK2",
+        "secret-key": REACT_APP_SECRET_KEY,
         "collection-id": "5e9ffc212940c704e1dc8cc1"
       }
     })
@@ -27,8 +27,7 @@ export default function TreinerList() {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          "secret-key":
-            "$2b$10$Emtr4pxCUtwgh7HANul37u5uxXHbgZC7qEpK7mxpWr.vLMKMiPDK2"
+          "secret-key": REACT_APP_SECRET_KEY
         }
       }
     )
@@ -36,7 +35,6 @@ export default function TreinerList() {
       .then(data => {
         data.records.forEach(bin => {
           loadBin(bin.id);
-          console.log(data.records);
         });
       });
   }, []);
