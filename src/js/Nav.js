@@ -13,7 +13,6 @@ export default function Nav() {
     const firstLink = nav.firstElementChild.firstElementChild;
     const lastLink = nav.lastElementChild.firstElementChild;
     const logo = nav.firstElementChild.nextSibling;
-    // console.log(nav);
 
     TweenMax.to(nav, 5, { css: { opacity: "1" } });
 
